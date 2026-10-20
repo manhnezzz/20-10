@@ -64,6 +64,14 @@
   }
   .card-sub { margin: 0; font: 700 13px/1.4 var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--ink); text-wrap: balance; }
   .card-msg { margin: 0; font: 600 16px/1.55 var(--font-ui); color: var(--ink); max-width: 28ch; text-wrap: balance; }
+  .card-photo {
+  width: min(62%, 190px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 22px rgba(255, 92, 154, .35);
+}
   .card-btn {
     display: inline-flex; align-items: center; gap: 10px; margin-top: 6px; cursor: pointer;
     font: 700 16px/1 var(--font-ui); color: #fff; border: 0; border-radius: 999px; padding: 15px 26px;
@@ -376,6 +384,7 @@
       </svg>
       <h1 class="card-title" id="cardTitle"></h1>
       <p class="card-sub" id="cardSub"></p>
+      <img class="card-photo" src="meotangquame.jpg" alt="" onerror="this.hidden=true">
       <p class="card-msg" id="cardMsg"></p>
       <button class="card-btn" id="cardBtn" type="button">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -466,18 +475,23 @@
    CẤU HÌNH: chỉ cần sửa phần này
    ============================================================ */
 const CONFIG = {
-  birthDate: "20/10/2000",   // chữ sẽ được gõ lên màn hình. Có thể dùng \n để xuống dòng
-  centerPhoto: "",           // ảnh trong nhụy hoa, ví dụ "anh/chinh.jpg". Để trống sẽ dùng ảnh mẫu
+  birthDate: "20/01/1981",   // chữ sẽ được gõ lên màn hình. Có thể dùng \n để xuống dòng
+  centerPhoto: "mother_main.jpg",           // ảnh trong nhụy hoa, ví dụ "anh/chinh.jpg". Để trống sẽ dùng ảnh mẫu
   floatingPhotos: [          // ảnh bay lơ lửng, thêm bao nhiêu tuỳ ý. Để trống sẽ dùng 8 ảnh mẫu
-    // "anh/1.jpg",
-    // "anh/2.jpg",
-    // "anh/3.jpg",
+     "meo1.jpg",
+     "meo2.jpg",
+     "meo3.jpg",
+     "meo4.jpg",
+     "meo5.jpg",
+     "meo6.jpg",
+     "meo7.jpg",
+     "meo8.jpg",
   ],
   showCard: true,            // false để bỏ tấm thiệp và chạy thẳng vào hiệu ứng gõ chữ
   cardTitle: "20/10",
   cardSubtitle: "Chúc mừng ngày Phụ nữ Việt Nam",
-  cardMessage: "Chúc bạn luôn rạng rỡ, bình yên và được yêu thương thật nhiều.",
-  cardButton: "Bấm để nhận quà",
+  cardMessage: "Con trai có quà tặng má nè",
+  cardButton: "Nhấn chỗ này nha",
   typingSpeedMs: 190,        // thời gian trung bình giữa hai ký tự khi gõ
   holdAfterTypingMs: 1600,   // dừng lại bao lâu sau khi gõ xong
   growSeconds: 7,            // thân hoa mọc từ đất lên (slow motion)
@@ -485,8 +499,8 @@ const CONFIG = {
   bloomSeconds: 8,           // nụ nở bung cánh
   showPhotoPicker: true,     // nút "Thử ảnh của bạn" để xem thử ảnh. Đặt false khi đưa lên web thật
 
-  music: "",                 // nhạc nền, ví dụ "nhac/bai-hat.mp3". Để trống là không có nhạc và không hiện nút loa
-  musicVolume: 0.6,          // âm lượng từ 0 đến 1
+  music: "blue_yungkai.mp3",                 // nhạc nền, ví dụ "nhac/bai-hat.mp3". Để trống là không có nhạc và không hiện nút loa
+  musicVolume: 1,          // âm lượng từ 0 đến 1
 
   /* Các thông điệp chạy sau khi hoa nở xong. Mỗi mục là một cảnh, thiết kế đổi theo thứ tự:
        1 giấy note   2 tin nhắn   3 bầu trời mây sao   4 phiếu quà tặng   5 bong bóng trái tim
